@@ -200,7 +200,6 @@ function checkMatch() {
 }
 
 function gameOver(win) {
-  // لغو timeout مربوط به چک کردن تطابق
   if (cardContainer.timeoutId) {
     clearTimeout(cardContainer.timeoutId);
     cardContainer.timeoutId = null;
@@ -218,7 +217,7 @@ function gameOver(win) {
     if (!emojiVisible && hardLevel) showEmoji("😂");
   } else {
     msg.textContent = "Time's up! You lose";
-    if (!emojiVisible && hardLevel) showEmoji("😡");
+    if (!emojiVisible && hardLevel) showEmoji("☹️");
     timeEl.textContent = 0;
   }
 

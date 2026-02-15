@@ -94,7 +94,7 @@ h1 {
 }
 
 .card.matched {
-  display: none;
+  visibility: hidden;
 }
 
 .face {
