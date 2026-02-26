@@ -100,6 +100,12 @@ async function startGame(isHard = false) {
   hardTimer = null;
 
   const response = await fetch("http://localhost:3000/cards/random-pack");
+  if (!response.ok) {
+    console.error("Failed to fetch cards:", response.statusText);
+    msg.textContent = "Error loading cards. Please try again.";
+    return;
+  }
+
   const data = await response.json();
   const cardData = data.cards;
 
