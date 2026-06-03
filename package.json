@@ -2,7 +2,7 @@
   "name": "foundation_game_project",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
