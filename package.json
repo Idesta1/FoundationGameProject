@@ -19,8 +19,10 @@
     "url": "https://github.com/rouhi438/FoundationGameProject/issues"
   },
   "homepage": "https://github.com/rouhi438/FoundationGameProject#readme",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
-    "better-sqlite3": "^12.6.2",
     "cors": "^2.8.6",
     "express": "^5.2.1"
   }

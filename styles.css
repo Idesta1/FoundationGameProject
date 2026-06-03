@@ -34,7 +34,6 @@ footer {
   margin: 0 auto;
   background-color: antiquewhite;
   border-radius: 6px;
-
 }
 
 h1 {
@@ -125,9 +124,9 @@ h1 {
 }
 
 .win-message {
-  width: 300px;
+  width: min(300px, 90vw);
   text-align: center;
-  font-size: 32px;
+  font-size: clamp(20px, 6vw, 32px);
   font-weight: bold;
   color: #03724b;
   position: absolute;
@@ -135,7 +134,7 @@ h1 {
 }
 
 .btns {
-  min-width: 320px;
+  width: min(390px, 90vw);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -159,7 +158,9 @@ h1 {
   padding: 0 30px;
   font-size: 16px;
   text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  transition:
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
 }
 
 #reset-btn:hover,
@@ -193,7 +194,6 @@ footer a:hover {
 }
 
 @media (max-width: 500px) {
-
   .game-info,
   header,
   footer {
@@ -217,7 +217,6 @@ footer a:hover {
     font-size: 10px;
   }
 }
-
 
 .emoji-icon {
   position: absolute;
@@ -249,7 +248,6 @@ footer a:hover {
 }
 
 @keyframes emoji-pulse {
-
   0%,
   100% {
     transform: translate(-50%, -50%) scale(3);

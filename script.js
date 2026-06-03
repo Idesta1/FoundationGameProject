@@ -28,7 +28,7 @@ function renderGamePage() {
         <a class="HYF" href="https://www.hackyourfuture.dk/about" target="_blank">HYF</a>
         &copy Feb 2026, open-sourced on
         <a href="https://github.com/Idesta1/FoundationGameProject" target="_blank">Github</a>
-        and hosted on <a href="#">Netlify</a> 🖤
+        and hosted on <a href="#">Render</a> 🖤
       </p>
     </footer>
   `;
@@ -99,7 +99,7 @@ async function startGame(isHard = false) {
   clearInterval(hardTimer);
   hardTimer = null;
 
-  const response = await fetch("http://localhost:3000/cards/random-pack");
+  const response = await fetch("data/cards.json");
   if (!response.ok) {
     console.error("Failed to fetch cards:", response.statusText);
     msg.textContent = "Error loading cards. Please try again.";
@@ -107,7 +107,8 @@ async function startGame(isHard = false) {
   }
 
   const data = await response.json();
-  const cardData = data.cards;
+  const packNumber = Math.floor(Math.random() * 3) + 1;
+  const cardData = data.packs[packNumber];
 
   cards = shuffleCards([...cardData, ...cardData]);
 
@@ -119,7 +120,7 @@ async function startGame(isHard = false) {
     card.innerHTML = `
       <div class="face front"></div>
       <div class="face back">
-        <img src="${cardData.image_path}" alt="${cardData.name}">
+        <img src="${cardData.image_path}" alt="card ${cardData.id}">
       </div>
     `;
 
